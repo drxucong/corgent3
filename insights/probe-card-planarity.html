@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Probe-Card Planarity: Why It Matters and How to Spec It | Corgent Insights</title>
+  <meta name="description" content="How probe-card planarity drives touchdown yield at wafer test, and the parameters to put in your next probe-card RFQ — practical guidance from Corgent." />
+  <meta name="google" content="notranslate" />
+  <link rel="icon" href="../assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+<header class="header header--solid is-scrolled">
+  <div class="container header__bar">
+    <a href="../index.html" class="brand" aria-label="Corgent Holdings">
+      <img class="brand__logo" src="../assets/img/corgent-logo.png" alt="Corgent Holdings Limited" />
+    </a>
+    <div class="header__right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang-btn="en" type="button">EN</button>
+        <button data-lang-btn="zh" type="button">中文</button>
+      </div>
+      <a class="btn btn--ghost" style="height:44px;padding:0 20px;font-size:14px;" href="../index.html#insights"><span data-lang="en">← All insights</span><span data-lang="zh">← 全部洞察</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="legal">
+    <div class="container legal__wrap">
+      <h1><span data-lang="en">Probe-card planarity: why it matters and how to spec it</span><span data-lang="zh">探针卡平面度:为何重要、如何定规格</span></h1>
+      <div class="article-meta">
+        <span class="post__tag"><span data-lang="en">Wafer test</span><span data-lang="zh">晶圆测试</span></span>
+        <span class="date"><span data-lang="en">Corgent Engineering · June 2026</span><span data-lang="zh">科進工程团队 · 2026 年 6 月</span></span>
+      </div>
+
+      <p><span data-lang="en">At wafer test, every touchdown is a negotiation between hundreds of probe tips and a wafer surface measured in microns. Planarity — how closely all tips sit in one plane — decides how that negotiation goes. Specified well, it is the quiet foundation of stable yield; specified loosely, it shows up later as inconsistent contact, scrubbed-out pads and dies failing at the edge of the array.</span><span data-lang="zh">在晶圆测试中,每一次落针(touchdown)都是数百个针尖与一片以微米计的晶圆表面之间的"博弈"。平面度——所有针尖与同一平面的贴合程度——决定了这场博弈的结果。规格定得好,它是良率稳定的无声基石;定得松,它日后就会表现为接触时好时坏、焊盘被过度刮蚀、阵列边缘的晶粒批量失效。</span></p>
+
+      <h2><span data-lang="en">1. What planarity actually controls</span><span data-lang="zh">一、平面度到底控制什么</span></h2>
+      <p><span data-lang="en">When the chuck raises the wafer into the card, the highest probe touches first. Every additional micron of travel — overdrive — pushes that first probe harder while later probes are still arriving. The planarity spread therefore sets the gap between the most- and least-compressed probes: too wide, and you must choose between under-driving the low tips (open contacts) or over-driving the high ones (pad damage, shortened probe life). Tight planarity is what lets one overdrive setting give every pad a clean, uniform scrub.</span><span data-lang="zh">当载台(chuck)将晶圆抬升压向探针卡时,最高的针先接触。之后每多压入一微米——即过驱动量(overdrive)——最先接触的针就被压得更紧,而最低的针才刚刚到位。平面度的离散因此决定了"压得最深的针"与"压得最浅的针"之间的差距:差距太大,你就只能二选一——要么低针欠驱动(接触开路),要么高针过驱动(焊盘损伤、探针寿命缩短)。只有平面度足够紧,一个统一的过驱动设定才能让每个焊盘都得到干净、均匀的刮擦(scrub)。</span></p>
+
+      <h2><span data-lang="en">2. The numbers that belong in an RFQ</span><span data-lang="zh">二、询价单里应该写哪些参数</span></h2>
+      <ul>
+        <li><span data-lang="en"><b>Tip planarity across the full array</b> — the total height spread of all tips, stated at a defined measurement condition (free-hanging vs. mounted, temperature).</span><span data-lang="zh"><b>全阵列针尖平面度</b>——所有针尖的总高度离散,并注明测量条件(自由态还是装机态、测量温度)。</span></li>
+        <li><span data-lang="en"><b>Tip position accuracy (XY)</b> relative to pad centres, including after the scrub motion.</span><span data-lang="zh"><b>针尖位置精度(XY)</b>——相对焊盘中心,且包含刮擦动作之后的位置。</span></li>
+        <li><span data-lang="en"><b>Recommended and maximum overdrive,</b> with the expected contact force per probe at each.</span><span data-lang="zh"><b>推荐与最大过驱动量</b>,以及对应条件下的单针接触力。</span></li>
+        <li><span data-lang="en"><b>Contact resistance</b> — initial and end-of-maintenance-interval limits, not just the fresh-card value.</span><span data-lang="zh"><b>接触电阻</b>——给出初始值与维护周期末的限值,而不只是新卡数据。</span></li>
+        <li><span data-lang="en"><b>Touchdown life</b> to those limits, with the cleaning regime assumed.</span><span data-lang="zh"><b>达到上述限值前的落针寿命</b>,并注明所假设的清针方案。</span></li>
+        <li><span data-lang="en"><b>Operating temperature range</b> — planarity at hot or cold test, not only at room temperature.</span><span data-lang="zh"><b>工作温度范围</b>——高温/低温测试下的平面度,而非仅常温指标。</span></li>
+      </ul>
+
+      <h2><span data-lang="en">3. Temperature changes everything</span><span data-lang="zh">三、温度会改变一切</span></h2>
+      <p><span data-lang="en">A card that measures beautifully at room temperature can bow measurably at 125&nbsp;°C or −40&nbsp;°C as the stiffener, PCB and probe head expand at different rates. If the device tests hot or cold, specify planarity at the test temperature, ask how the design compensates thermal bow, and verify with a soak before correlating yield.</span><span data-lang="zh">一张常温下数据漂亮的探针卡,在 125&nbsp;°C 或 −40&nbsp;°C 时可能出现可测量的弓曲——加强板、PCB 与探针头的热膨胀系数各不相同。如果器件需要高低温测试,平面度必须按测试温度规定,询问设计如何补偿热弓曲,并在良率对标前先做温度浸置验证。</span></p>
+
+      <h2><span data-lang="en">4. Planarity is a lifetime property</span><span data-lang="zh">四、平面度是"全生命周期"属性</span></h2>
+      <p><span data-lang="en">Tips wear, springs relax, and cleaning abrades — planarity drifts over the card's life. Treat it as a maintained parameter: baseline it at incoming inspection, re-measure at maintenance intervals, and track per-zone contact failures in the test data, which usually reveal planarity drift before the metrology does.</span><span data-lang="zh">针尖会磨损、弹性会松弛、清针本身也是磨耗——平面度在探针卡的生命周期内会持续漂移。要把它当作受维护的参数:来料检验时建立基线,按维护周期复测,并在测试数据中按区域跟踪接触失效——数据上的分区异常,往往比计量复测更早暴露平面度漂移。</span></p>
+
+      <h2><span data-lang="en">5. Close the loop at acceptance</span><span data-lang="zh">五、在验收环节闭环</span></h2>
+      <p><span data-lang="en">Whatever the RFQ says, the acceptance test is where it becomes real: agree the measurement method and fixtures with the vendor in advance, witness first-article metrology against the spec, and correlate a known wafer before release to production. A planarity spec that is never re-measured is a wish, not a requirement.</span><span data-lang="zh">无论询价单写得多完整,真正兑现是在验收环节:提前与供应商约定测量方法与治具,首件计量按规格见证,量产放行前用已知晶圆做相关性验证。从不复测的平面度规格,只是愿望,不是要求。</span></p>
+
+      <div class="article-cta">
+        <p><b><span data-lang="en">Preparing a probe-card RFQ?</span><span data-lang="zh">在准备探针卡询价?</span></b><br /><span data-lang="en">We help teams specify, evaluate and qualify wafer-test hardware.</span><span data-lang="zh">我们协助团队定义、评估并验证晶圆测试硬件。</span></p>
+        <a class="btn btn--primary" href="../index.html#contact"><span data-lang="en">Talk to an engineer</span><span data-lang="zh">联系工程师</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" style="padding-top:0;">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> <span data-lang="en">Corgent Holdings Limited. All rights reserved.</span><span data-lang="zh">科進控股有限公司 版权所有。</span></span>
+      <span style="display:flex;gap:22px;">
+        <a href="../privacy.html"><span data-lang="en">Privacy Policy</span><span data-lang="zh">隐私政策</span></a>
+        <a href="../terms.html"><span data-lang="en">Terms of Use</span><span data-lang="zh">服务条款</span></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

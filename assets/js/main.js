@@ -138,16 +138,47 @@
     });
   });
 
-  /* ---------- Contact form (front-end demo) ---------- */
+  /* ---------- Contact form (FormSubmit AJAX) ---------- */
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/sales@corgent.co";
   const form = doc.querySelector("#contact-form");
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const ok = form.querySelector(".form__ok");
-      if (ok) ok.classList.add("show");
-      form.querySelectorAll("input, textarea, select").forEach((f) => (f.disabled = true));
+      const err = form.querySelector(".form__err");
       const btn = form.querySelector("button[type=submit]");
-      if (btn) btn.style.display = "none";
+      if (ok) ok.classList.remove("show");
+      if (err) err.classList.remove("show");
+      if (btn) btn.disabled = true;
+
+      const sel = form.querySelector("select[name=interest]");
+      const interestText = sel ? sel.options[sel.selectedIndex].textContent.trim() : "";
+      const payload = {
+        name: (form.querySelector("[name=name]") || {}).value || "",
+        company: (form.querySelector("[name=company]") || {}).value || "",
+        email: (form.querySelector("[name=email]") || {}).value || "",
+        interest: interestText,
+        message: (form.querySelector("[name=message]") || {}).value || "",
+        _honey: (form.querySelector("[name=_honey]") || {}).value || "",
+        _subject: "New project brief — corgent.co",
+        _template: "table",
+        _captcha: "false"
+      };
+
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        if (ok) ok.classList.add("show");
+        form.querySelectorAll("input, textarea, select").forEach((f) => (f.disabled = true));
+        if (btn) btn.style.display = "none";
+      } catch (ex) {
+        if (err) err.classList.add("show");
+        if (btn) btn.disabled = false;
+      }
     });
   }
 })();

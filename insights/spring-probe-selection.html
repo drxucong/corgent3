@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choosing Spring Probes for High-Current ICT | Corgent Insights</title>
+  <meta name="description" content="Current rating, contact resistance and life-cycle trade-offs when selecting spring probes for high-current in-circuit test — practical guidance from Corgent." />
+  <meta name="google" content="notranslate" />
+  <link rel="icon" href="../assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+<header class="header header--solid is-scrolled">
+  <div class="container header__bar">
+    <a href="../index.html" class="brand" aria-label="Corgent Holdings">
+      <img class="brand__logo" src="../assets/img/corgent-logo.png" alt="Corgent Holdings Limited" />
+    </a>
+    <div class="header__right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang-btn="en" type="button">EN</button>
+        <button data-lang-btn="zh" type="button">中文</button>
+      </div>
+      <a class="btn btn--ghost" style="height:44px;padding:0 20px;font-size:14px;" href="../index.html#insights"><span data-lang="en">← All insights</span><span data-lang="zh">← 全部洞察</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="legal">
+    <div class="container legal__wrap">
+      <h1><span data-lang="en">Choosing spring probes for high-current ICT</span><span data-lang="zh">大电流 ICT 弹簧探针选型要点</span></h1>
+      <div class="article-meta">
+        <span class="post__tag"><span data-lang="en">Fixtures</span><span data-lang="zh">治具</span></span>
+        <span class="date"><span data-lang="en">Corgent Engineering · June 2026</span><span data-lang="zh">科進工程团队 · 2026 年 6 月</span></span>
+      </div>
+
+      <p><span data-lang="en">When the device under test pulls real power — EV power modules, motor drives, battery management — probe selection stops being a catalogue exercise. A probe that is perfectly adequate for signal nets will overheat, weld or erode on a high-current net. These are the trade-offs we work through on every high-current fixture design.</span><span data-lang="zh">当被测件承载真实功率——电动车功率模块、电机驱动、电池管理——探针选型就不再是"翻目录"那么简单。在信号网络上完全够用的探针,放到大电流网络上会过热、粘连甚至烧蚀。下面是我们在每个大电流治具设计中反复权衡的要点。</span></p>
+
+      <h2><span data-lang="en">1. Derate the catalogue current rating</span><span data-lang="zh">一、目录额定电流要降额使用</span></h2>
+      <p><span data-lang="en">Manufacturer current ratings are typically measured on a single probe, in free air, at a fixed temperature rise. In a real fixture — probes clustered together, enclosed, cycling continuously — the practical limit is lower. Treat the datasheet figure as a ceiling, not a working number, and apply a healthy derating factor; for densely packed arrays, plan thermal relief or distribute the current across multiple probes.</span><span data-lang="zh">厂商的额定电流通常是单根探针、自由空气、固定温升条件下测得的。而真实治具中——探针密集排布、空间封闭、连续循环——实际可用电流更低。把数据手册的数字当作"上限"而非"工作值",留足降额余量;对密集阵列,要考虑散热设计或将电流分配到多根探针上。</span></p>
+
+      <h2><span data-lang="en">2. Parallel probes: share the current properly</span><span data-lang="zh">二、并联探针:让电流真正均流</span></h2>
+      <ul>
+        <li><span data-lang="en"><b>Use multiple probes per high-current net</b> — it lowers per-probe current, adds redundancy against a single dirty contact, and reduces contact-resistance variation.</span><span data-lang="zh"><b>每个大电流网络使用多根探针</b>——降低单针电流、对单点接触不良形成冗余,并减小接触电阻的离散。</span></li>
+        <li><span data-lang="en"><b>Balance the wiring.</b> Parallel probes only share current as well as their path resistances match: equal wire lengths and gauge, symmetric busbar connections.</span><span data-lang="zh"><b>配线要均衡。</b>并联探针的均流效果取决于路径电阻是否一致:导线等长等径,铜排连接对称。</span></li>
+        <li><span data-lang="en"><b>Verify, don't assume.</b> Measure per-probe voltage drop at commissioning; one starved probe means one overloaded probe.</span><span data-lang="zh"><b>用测量验证,不要靠假设。</b>调试时逐针测电压降;有一根"分不到"电流,就意味着另一根在过载。</span></li>
+      </ul>
+
+      <h2><span data-lang="en">3. Contact resistance is a moving target</span><span data-lang="zh">三、接触电阻是个"会漂移"的指标</span></h2>
+      <p><span data-lang="en">New probes measure in the tens of milliohms; what matters is the value after a hundred thousand cycles on flux residue and oxidised terminals. Tip geometry should match the target surface — sharp points for penetrating oxide on bare terminals, crown or serrated tips for plated pads — and the maintenance plan should treat contact resistance as a monitored production parameter, with cleaning intervals and replacement thresholds defined up front.</span><span data-lang="zh">新探针的接触电阻只有几十毫欧;真正重要的是在助焊剂残留与氧化端子上循环十万次之后的数值。针头形状要匹配目标表面——尖头适合刺穿裸端子上的氧化层,皇冠头/锯齿头适合电镀焊盘——维护计划要把接触电阻当作受监控的生产参数,提前定义清洁周期与更换阈值。</span></p>
+
+      <h2><span data-lang="en">4. Spring force vs. board stress</span><span data-lang="zh">四、弹簧力与板件应力的平衡</span></h2>
+      <p><span data-lang="en">Higher spring force gives better contact through contamination — but hundreds of high-force probes add up to a serious distributed load on the assembly. Sum the total probe force early, design the support plate and hold-downs against it, and pay attention to flex near ceramic components and large BGAs, which crack under board bow long before anything else fails.</span><span data-lang="zh">更大的弹簧力意味着更强的抗污染接触能力——但数百根高弹力探针叠加,会对组件形成可观的分布载荷。要尽早合计总针压,据此设计支撑板与压紧机构,并特别关注陶瓷元件与大型 BGA 附近的板弯——板子一旦弓起,最先开裂的就是它们。</span></p>
+
+      <h2><span data-lang="en">5. Plan for the probe as a consumable</span><span data-lang="zh">五、把探针当作耗材来规划</span></h2>
+      <p><span data-lang="en">High-current probes wear faster than signal probes — erosion at the tip, fatigue in the spring, heat ageing in the plating. A good fixture design makes this cheap to live with: receptacle-mounted probes for tool-free replacement, a spares kit sized to the line's cycle count, and wear tracking in the test data so replacement happens on evidence, not on failure.</span><span data-lang="zh">大电流探针比信号探针损耗更快——针尖烧蚀、弹簧疲劳、镀层热老化。好的治具设计会让这件事变得"便宜":针套式安装实现免工具更换,按产线循环数配备备件包,并在测试数据中跟踪磨损趋势——让更换基于证据,而不是等故障发生。</span></p>
+
+      <div class="article-cta">
+        <p><b><span data-lang="en">Designing a high-current fixture?</span><span data-lang="zh">在做大电流治具?</span></b><br /><span data-lang="en">We design ICT fixtures for power modules, BMS and motor drives.</span><span data-lang="zh">我们为功率模块、BMS 与电机驱动设计 ICT 治具。</span></p>
+        <a class="btn btn--primary" href="../index.html#contact"><span data-lang="en">Talk to an engineer</span><span data-lang="zh">联系工程师</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" style="padding-top:0;">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> <span data-lang="en">Corgent Holdings Limited. All rights reserved.</span><span data-lang="zh">科進控股有限公司 版权所有。</span></span>
+      <span style="display:flex;gap:22px;">
+        <a href="../privacy.html"><span data-lang="en">Privacy Policy</span><span data-lang="zh">隐私政策</span></a>
+        <a href="../terms.html"><span data-lang="en">Terms of Use</span><span data-lang="zh">服务条款</span></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

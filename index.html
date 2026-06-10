@@ -409,27 +409,27 @@
     <div class="section-head" data-reveal>
       <span class="eyebrow"><span data-lang="en">Insights</span><span data-lang="zh">洞察</span></span>
       <h2 class="section-title"><span data-lang="en">Engineering notes from our team</span><span data-lang="zh">来自工程团队的实践笔记</span></h2>
-      <p class="section-lead"><span data-lang="en">Practical write-ups on design-for-test, fixtures and test engineering. First articles are in preparation.</span><span data-lang="zh">关于可测试性设计、治具与测试工程的实战分享,首批文章正在撰写中。</span></p>
+      <p class="section-lead"><span data-lang="en">Practical write-ups on design-for-test, fixtures and test engineering from the Corgent team.</span><span data-lang="zh">来自科進团队的可测试性设计、治具与测试工程实战分享。</span></p>
     </div>
     <div class="posts">
-      <article class="post" data-reveal>
+      <a class="post" href="insights/dft-checklist.html" data-reveal>
         <span class="post__tag"><span data-lang="en">Design for test</span><span data-lang="zh">可测试性设计</span></span>
         <h3><span data-lang="en">A practical DFT checklist for new PCB designs</span><span data-lang="zh">新板设计的实用 DFT 检查清单</span></h3>
         <p><span data-lang="en">The test-point, access and coverage rules we apply before any board goes to layout.</span><span data-lang="zh">在电路板进入布局前,我们坚持的测试点、可达性与覆盖率规则。</span></p>
-        <span class="post__soon"><span data-lang="en">Coming soon</span><span data-lang="zh">即将发布</span></span>
-      </article>
-      <article class="post" data-reveal data-delay="1">
+        <span class="link-arrow"><span data-lang="en">Read the article</span><span data-lang="zh">阅读全文</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="post" href="insights/spring-probe-selection.html" data-reveal data-delay="1">
         <span class="post__tag"><span data-lang="en">Fixtures</span><span data-lang="zh">治具</span></span>
         <h3><span data-lang="en">Choosing spring probes for high-current ICT</span><span data-lang="zh">大电流 ICT 弹簧探针选型要点</span></h3>
         <p><span data-lang="en">Current rating, contact resistance and life-cycle trade-offs when the DUT pulls real power.</span><span data-lang="zh">当被测件承载真实功率时,电流规格、接触电阻与寿命之间如何权衡。</span></p>
-        <span class="post__soon"><span data-lang="en">Coming soon</span><span data-lang="zh">即将发布</span></span>
-      </article>
-      <article class="post" data-reveal data-delay="2">
+        <span class="link-arrow"><span data-lang="en">Read the article</span><span data-lang="zh">阅读全文</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="post" href="insights/probe-card-planarity.html" data-reveal data-delay="2">
         <span class="post__tag"><span data-lang="en">Wafer test</span><span data-lang="zh">晶圆测试</span></span>
         <h3><span data-lang="en">Probe-card planarity: why it matters and how to spec it</span><span data-lang="zh">探针卡平面度:为何重要、如何定规格</span></h3>
         <p><span data-lang="en">How planarity drives touchdown yield, and the numbers to put in your next probe-card RFQ.</span><span data-lang="zh">平面度如何影响接触良率,以及下一次探针卡询价时应写入的关键参数。</span></p>
-        <span class="post__soon"><span data-lang="en">Coming soon</span><span data-lang="zh">即将发布</span></span>
-      </article>
+        <span class="link-arrow"><span data-lang="en">Read the article</span><span data-lang="zh">阅读全文</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -505,6 +505,7 @@
       </div>
 
       <form class="form" id="contact-form" data-reveal data-delay="1">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="form__row">
           <div class="field"><label><span data-lang="en">Name</span><span data-lang="zh">姓名</span></label><input type="text" name="name" required data-ph-en="Your name" data-ph-zh="您的姓名" /></div>
           <div class="field"><label><span data-lang="en">Company</span><span data-lang="zh">公司</span></label><input type="text" name="company" data-ph-en="Company" data-ph-zh="公司名称" /></div>
@@ -533,7 +534,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
         <div class="form__ok"><span data-lang="en">Thank you — we've received your brief and will be in touch within two business days.</span><span data-lang="zh">感谢您的信任！我们已收到需求，将在两个工作日内与您联系。</span></div>
-        <p class="form__note"><span data-lang="en">This demo form does not send data. Connect it to your email service or CRM before going live.</span><span data-lang="zh">此为演示表单，暂不发送数据。上线前请接入您的邮件服务或 CRM。</span></p>
+        <div class="form__err"><span data-lang="en">Something went wrong sending your brief. Please email us directly at sales@corgent.co.</span><span data-lang="zh">提交失败，请直接发送邮件至 sales@corgent.co。</span></div>
+        <p class="form__note"><span data-lang="en">Your details are used only to respond to your enquiry — see our <a href="privacy.html" style="text-decoration:underline">privacy policy</a>.</span><span data-lang="zh">您的信息仅用于回复本次咨询，详见<a href="privacy.html" style="text-decoration:underline">隐私政策</a>。</span></p>
       </form>
     </div>
   </div>

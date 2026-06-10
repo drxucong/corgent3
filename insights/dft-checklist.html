@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Practical DFT Checklist for New PCB Designs | Corgent Insights</title>
+  <meta name="description" content="The test-point, access and coverage rules Corgent applies before any board goes to layout — a practical design-for-test checklist for hardware teams." />
+  <meta name="google" content="notranslate" />
+  <link rel="icon" href="../assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+<header class="header header--solid is-scrolled">
+  <div class="container header__bar">
+    <a href="../index.html" class="brand" aria-label="Corgent Holdings">
+      <img class="brand__logo" src="../assets/img/corgent-logo.png" alt="Corgent Holdings Limited" />
+    </a>
+    <div class="header__right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang-btn="en" type="button">EN</button>
+        <button data-lang-btn="zh" type="button">中文</button>
+      </div>
+      <a class="btn btn--ghost" style="height:44px;padding:0 20px;font-size:14px;" href="../index.html#insights"><span data-lang="en">← All insights</span><span data-lang="zh">← 全部洞察</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="legal">
+    <div class="container legal__wrap">
+      <h1><span data-lang="en">A practical DFT checklist for new PCB designs</span><span data-lang="zh">新板设计的实用 DFT 检查清单</span></h1>
+      <div class="article-meta">
+        <span class="post__tag"><span data-lang="en">Design for test</span><span data-lang="zh">可测试性设计</span></span>
+        <span class="date"><span data-lang="en">Corgent Engineering · June 2026</span><span data-lang="zh">科進工程团队 · 2026 年 6 月</span></span>
+      </div>
+
+      <p><span data-lang="en">Most test problems are designed in long before the first fixture is quoted. The cheapest moment to fix them is at schematic and layout review — once a board is released, every missing test point becomes either a coverage gap or an expensive workaround. This is the checklist we walk through with clients before any board goes to layout.</span><span data-lang="zh">大多数测试问题,早在第一套治具报价之前就已经"设计"进了板子里。修正它们成本最低的时机是原理图与布局评审——板子一旦发出,每一个缺失的测试点不是变成覆盖率缺口,就是变成昂贵的补救措施。下面是我们在客户的板子进入布局前逐项核对的清单。</span></p>
+
+      <h2><span data-lang="en">1. Test-point access</span><span data-lang="zh">一、测试点可达性</span></h2>
+      <ul>
+        <li><span data-lang="en"><b>Every electrical net should be probeable.</b> Aim for a dedicated test pad on each net; where space forbids it, document which nets are uncovered and why, so the coverage trade-off is a decision, not a surprise.</span><span data-lang="zh"><b>每个电气网络都应可探测。</b>尽量为每个网络设置专用测试焊盘;空间不允许时,记录哪些网络未覆盖及原因——让覆盖率的取舍成为"决策"而非"意外"。</span></li>
+        <li><span data-lang="en"><b>Prefer dedicated pads over component lands.</b> Probing directly on component leads or fine-pitch pads risks damage and gives unstable contact over fixture life.</span><span data-lang="zh"><b>优先使用专用测试焊盘,而非元件焊盘。</b>直接探测元件引脚或细间距焊盘既可能造成损伤,长期接触也不稳定。</span></li>
+        <li><span data-lang="en"><b>Keep test pads on one side where possible.</b> Single-sided access means a simpler, cheaper and more reliable fixture; double-sided fixtures roughly double mechanical complexity.</span><span data-lang="zh"><b>测试焊盘尽量集中在同一面。</b>单面探测意味着治具更简单、更便宜、更可靠;双面治具的机械复杂度大约翻倍。</span></li>
+      </ul>
+
+      <h2><span data-lang="en">2. Pad size and spacing</span><span data-lang="zh">二、焊盘尺寸与间距</span></h2>
+      <ul>
+        <li><span data-lang="en"><b>Use the largest pad the layout allows.</b> A commonly used rule of thumb is around 0.9–1.0&nbsp;mm (35–40&nbsp;mil) diameter for standard probes; smaller pads force fine-pitch probes that wear faster and cost more.</span><span data-lang="zh"><b>在布局允许范围内把焊盘做大。</b>常用经验值是标准探针配约 0.9–1.0&nbsp;mm(35–40&nbsp;mil)直径;焊盘更小就只能用细间距探针——磨损更快、成本更高。</span></li>
+        <li><span data-lang="en"><b>Respect probe pitch.</b> Standard probe grids favour 2.54&nbsp;mm (100&nbsp;mil) centres, with 1.27&nbsp;mm (50&nbsp;mil) as the usual practical minimum before fixture cost and fragility climb sharply.</span><span data-lang="zh"><b>尊重探针栅格间距。</b>标准探针阵列以 2.54&nbsp;mm(100&nbsp;mil)中心距最稳妥;1.27&nbsp;mm(50&nbsp;mil)通常是实用下限,再小治具成本与脆弱性会陡增。</span></li>
+        <li><span data-lang="en"><b>Keep clearance from tall components and the board edge.</b> Probes need room to land and the fixture needs room to clamp — keep test pads away from tall parts and leave a clear margin along board edges for hold-downs and tooling.</span><span data-lang="zh"><b>与高元件和板边保持距离。</b>探针需要落针空间,治具需要压紧空间——测试焊盘要避开高元件,板边预留空白区域给压杆与工装。</span></li>
+      </ul>
+
+      <h2><span data-lang="en">3. Tooling and registration</span><span data-lang="zh">三、定位与工装</span></h2>
+      <ul>
+        <li><span data-lang="en"><b>Provide at least two tooling holes,</b> unplated, placed diagonally and asymmetrically so the board only fits one way.</span><span data-lang="zh"><b>至少设置两个定位孔</b>——非电镀孔,对角且非对称布置,确保板子只能以唯一方向装入。</span></li>
+        <li><span data-lang="en"><b>Add fiducials if the line uses optical alignment,</b> and keep panelisation breakaways clear of test pads — pads on break-off rails disappear after depanel.</span><span data-lang="zh"><b>若产线使用光学对位,加基准点(fiducial);</b>拼板工艺边上不要放测试焊盘——分板后这些焊盘就不存在了。</span></li>
+      </ul>
+
+      <h2><span data-lang="en">4. Electrical design for coverage</span><span data-lang="zh">四、面向覆盖率的电气设计</span></h2>
+      <ul>
+        <li><span data-lang="en"><b>Make resets, enables and boundary-scan pins accessible.</b> A reachable TAP port turns hundreds of digital nets into testable nets at almost zero layout cost.</span><span data-lang="zh"><b>复位、使能与边界扫描引脚必须可达。</b>一个可触达的 TAP 口,几乎零布局代价就能让数百个数字网络变得可测。</span></li>
+        <li><span data-lang="en"><b>Give the tester a way to isolate power.</b> Test pads on both sides of inrush-limiting elements and the ability to back-drive or disable supplies makes power-rail faults diagnosable instead of mysterious.</span><span data-lang="zh"><b>给测试机隔离电源的手段。</b>在浪涌限制元件两侧都布测试点,并允许禁用或旁路供电,电源轨故障才能被定位,而不是成为悬案。</span></li>
+        <li><span data-lang="en"><b>Pull-ups, series resistors and unconnected pins:</b> agree the rules early — they decide what an in-circuit tester can and cannot measure.</span><span data-lang="zh"><b>上拉、串阻与悬空引脚:</b>尽早约定处理规则——它们直接决定在线测试机"能测什么、不能测什么"。</span></li>
+      </ul>
+
+      <h2><span data-lang="en">5. Review it as a deliverable</span><span data-lang="zh">五、把 DFT 当作交付物来评审</span></h2>
+      <p><span data-lang="en">Treat testability as a release criterion: run a coverage estimate at layout review, record the uncovered nets with a reason for each, and have the test engineer sign off alongside the layout engineer. Ten minutes of review at this stage routinely saves weeks at line bring-up.</span><span data-lang="zh">把可测试性当作发布门槛:布局评审时做一次覆盖率估算,逐项记录未覆盖网络及原因,并由测试工程师与布局工程师共同签核。这个阶段十分钟的评审,往往能在产线导入时省下数周。</span></p>
+
+      <div class="article-cta">
+        <p><b><span data-lang="en">Planning a new board?</span><span data-lang="zh">正在规划新板?</span></b><br /><span data-lang="en">We run independent DFT reviews before layout freeze.</span><span data-lang="zh">我们提供布局冻结前的独立 DFT 评审。</span></p>
+        <a class="btn btn--primary" href="../index.html#contact"><span data-lang="en">Talk to an engineer</span><span data-lang="zh">联系工程师</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" style="padding-top:0;">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> <span data-lang="en">Corgent Holdings Limited. All rights reserved.</span><span data-lang="zh">科進控股有限公司 版权所有。</span></span>
+      <span style="display:flex;gap:22px;">
+        <a href="../privacy.html"><span data-lang="en">Privacy Policy</span><span data-lang="zh">隐私政策</span></a>
+        <a href="../terms.html"><span data-lang="en">Terms of Use</span><span data-lang="zh">服务条款</span></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
