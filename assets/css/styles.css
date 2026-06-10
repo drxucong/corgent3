@@ -514,9 +514,11 @@ body.menu-open .burger span:nth-child(3) { transform: translateY(-6px) rotate(-4
 }
 
 /* Lang visibility — !important so it always beats layout display rules
-   (e.g. .ci span / .loc span / .cert span set display:block) */
-html[lang="en"] [data-lang="zh"],
-html[lang="zh"] [data-lang="en"] { display: none !important; }
+   (e.g. .ci span / .loc span / .cert span set display:block).
+   Prefix match (^=) so browser translators rewriting lang to "zh-CN"
+   don't break the toggle and show both languages at once. */
+html[lang^="en"] [data-lang="zh"],
+html[lang^="zh"] [data-lang="en"] { display: none !important; }
 
 /* =============================================================
    RESPONSIVE
