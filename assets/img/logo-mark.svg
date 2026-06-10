@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Corgent">
+  <defs>
+    <linearGradient id="cg" x1="20" y1="14" x2="100" y2="106" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1D7CF2"/>
+      <stop offset="100%" stop-color="#0F6CE1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="48" fill="none" stroke="url(#cg)" stroke-width="8"/>
+  <!-- interlocking circuit swirls -->
+  <path d="M38 50C38 36 47 28 63 28C77 28 86 35 86 47C86 57 79 63 67 65"
+        stroke="url(#cg)" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M82 70C82 84 73 92 57 92C43 92 34 85 34 73C34 63 41 57 53 55"
+        stroke="url(#cg)" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="38" cy="50" r="7" fill="#0F6CE1"/>
+  <circle cx="86" cy="47" r="7" fill="#1D7CF2"/>
+  <circle cx="82" cy="70" r="7" fill="#0F6CE1"/>
+  <circle cx="34" cy="73" r="7" fill="#1D7CF2"/>
+</svg>
